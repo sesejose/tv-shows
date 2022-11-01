@@ -1,0 +1,71 @@
+<form>
+  <div class="form-group">
+    <label for="name"
+      >Name
+      <span class="hint">Enter the shows name</span>
+    </label>
+    <input id="name" type="text" name="name" required />
+    <span class="hidden">Please do better</span>
+  </div>
+
+  <div class="form-group">
+    <label for="seasons"
+      >Seasons
+      <span class="hint">Enter the number of seasons</span>
+    </label>
+    <div class="input-group">
+      <input type="number" id="seasons" pattern="[0-9]" name="seasons" inputmode="numeric" required />
+      <span>#</span>
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="director"
+      >Director
+      <span class="hint">Who directed it?</span>
+    </label>
+    <input list="director-names" type="text" id="director" name="director" required />
+
+    <datalist id="director-names">
+      <option value="Martin Scorcese"></option>
+      <option value="John Woo"></option>
+      <option value="Questin Tarantino"></option>
+    </datalist>
+  </div>
+
+  <fieldset class="ongoing">
+    <legend>Ongoing?</legend>
+    <span class="hint">Is the show still being recorded?</span>
+    <ul role="list" class="controls">
+      <li>
+        <label for="yes">
+          <input id="yes" type="radio" name="ongoing" value="yes" />
+          Yes
+        </label>
+      </li>
+      <li>
+        <label for="no">
+          <input id="no" type="radio" name="ongoing" value="no" checked />
+          No
+        </label>
+      </li>
+    </ul>
+  </fieldset>
+
+  <div class="form-group range">
+    <label for="rating">Rating</label>
+    <div class="range-wrap">
+      <input type="range" step=".01" min="0" max="5" value="2.5" id="rating" name="rating" />
+    </div>
+  </div>
+
+  <div class="form-group">
+    <label for="genres">
+      Genres
+      <span class="hint">Enter one genre per line</span>
+    </label>
+    <textarea name="genres" id="genres" required></textarea>
+  </div>
+
+  <button name="submit" data-add class="btn">Add Show</button>
+</form>
